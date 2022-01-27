@@ -4,10 +4,21 @@ const routes = [
   {
     path: '/',
     name: '',
+    redirect: "/index",
     component: () => import(/* webpackChunkName: "layout" */ '@/layout/index.vue'),
     meta: {
       title: '首页',
     },
+    children: [
+      {
+        path: '/index',
+        name: '',
+        component: () => import(/* webpackChunkName: "layout" */ '@/layout/index.vue'),
+        meta: {
+          title: '首页',
+        },
+      }
+    ]
   },
   { path: '/login', component: () => import('@/views/login/index.vue') },
 ]
