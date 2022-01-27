@@ -24,6 +24,9 @@ const submitForm = () => {
     if (valid) {}
   })
 }
+const resetForm = () => {
+  loginFormRef.value.resetFields()
+}
 </script>
 
 <template>
@@ -38,6 +41,9 @@ const submitForm = () => {
       <el-form-item>
         <div class="btn-container">
           <el-button type="primary" style="width: 100%" @click="submitForm()">登录</el-button>
+        </div>
+        <div class="btn-container">
+          <el-button type="primary" style="width: 100%" @click="resetForm()">重置</el-button>
         </div>
       </el-form-item>
     </el-form>

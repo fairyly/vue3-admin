@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    index
+      info
   </div>
 </template>
 

@@ -1,12 +1,43 @@
 <script setup>
+import { useRouter } from "vue-router";
+// 声明 props
+const props = defineProps({
+  menuList: [Array, Object]
+})
+// 声明 emits
+const emit = defineEmits(['change', 'delete'])
+const router = useRouter()
+
+const toUrl = (item) => {
+  emit('change', item.path)
+  router.push(item.path)
+}
 </script>
 
 <template>
-  <div>
-
+  <div class="common-head-main">
+    <ul>
+      <li v-for="(item, index) in menuList" :key="index" @click="toUrl(item)">{{ item.name }}</li>
+    </ul>
   </div>
 </template>
 
-<style scoped>
-
+<style lang="less" scoped>
+.common-head-main {
+  width: 100%;
+  height: 48px;
+  padding-left: 320px;
+  background: #409eff;
+  ul {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    li {
+      &+li {
+        margin-left: 20px;
+      }
+    }
+  }
+}
 </style>

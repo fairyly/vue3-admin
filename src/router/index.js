@@ -7,15 +7,31 @@ const routes = [
     redirect: "/index",
     component: () => import(/* webpackChunkName: "layout" */ '@/layout/index.vue'),
     meta: {
-      title: '首页',
+      title: 'layout',
     },
     children: [
       {
         path: '/index',
         name: '',
-        component: () => import(/* webpackChunkName: "layout" */ '@/layout/index.vue'),
+        component: () => import(/* webpackChunkName: "layout" */ '@/views/index/index.vue'),
         meta: {
           title: '首页',
+        },
+      },
+      {
+        path: '/info',
+        name: '',
+        component: () => import(/* webpackChunkName: "layout" */ '@/views/info/index.vue'),
+        meta: {
+          title: '介绍',
+        },
+      },
+      {
+        path: '/set',
+        name: '',
+        component: () => import(/* webpackChunkName: "layout" */ '@/views/set/index.vue'),
+        meta: {
+          title: '设置',
         },
       }
     ]

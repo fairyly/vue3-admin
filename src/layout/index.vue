@@ -1,11 +1,21 @@
 <script setup>
+import { ref, toRefs, reactive } from 'vue'
 import CommonHead from './common-head.vue'
 import CommonSide from './common-side.vue'
+
+const menuList = ref([
+  { id: "1", name: "首页", path: '/index' },
+  { id: "2", name: "介绍", path: '/info' },
+  { id: "3", name: "设置", path: '/set' }
+]);
+const changePath = (val) => {
+  console.log('emit:',val)
+}
 </script>
 
 <template>
   <div class="layout-main">
-    <common-head />
+    <common-head :menu-list="menuList" @change="changePath" />
     <div class="layout-main-body">
       <div class="layout-main-left">
         <common-side />
