@@ -60,7 +60,7 @@ export default defineConfig(({ command, mode }) => {
       // 构建选项
       outDir: 'dist', // 默认： dist,定输出路径
       assetsDir: 'assets', // 默认： assets ,指定生成静态资源的存放路径
-      assetsInlineLimit: '4096', // 小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求
+      assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求
       // 如果指定了 build.lib，那么 build.assetsInlineLimit 将被忽略
       cssCodeSplit: 'true', // 默认： true, 启用/禁用 CSS 代码拆分
       // rollupOptions: { // 自定义底层的 Rollup 打包配置
@@ -74,7 +74,7 @@ export default defineConfig(({ command, mode }) => {
       //   }
       // },
       // https://rollupjs.org/guide/en/#big-list-of-options
-      reportCompressedSize: 'false', // 默认： true, 启用/禁用 gzip 压缩大小报告。压缩大型输出文件可能会很慢，因此禁用该功能可能会提高大型项目的构建性能
+      reportCompressedSize: false, // 默认： true, 启用/禁用 gzip 压缩大小报告。压缩大型输出文件可能会很慢，因此禁用该功能可能会提高大型项目的构建性能
     },
     optimizeDeps: {
       // 依赖优化
